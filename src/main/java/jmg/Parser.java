@@ -72,7 +72,7 @@ public class Parser {
         System.out.printf("    .andExpect(jsonPath(\"%s\", hasSize(%s)))\n", path(), node.size());
         int i = 0;
         for (JsonNode element : node) {
-            String key = String.format("[%d]", i);
+            String key = String.format("[%d]", i++);
             path.offer(key);
             parse(element);
             String poped = path.pollLast();
